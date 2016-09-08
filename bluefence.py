@@ -14,15 +14,15 @@ parser.add_argument('--delay', metavar='SECONDS', type=int, default=10,
                     help='Time between two scans')
 parser.add_argument('-c', '--cmd', metavar='COMMAND', type=str,
                     default='dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock',
-                    help='Time between two scans')
+                    help='Command to run when triggered')
 parser.add_argument('-m', '--missed', metavar='NUMBER', type=int, default=1,
-                    help='Number of missed scans to trigger lock')
+                    help='Number of missed scans to trigger command')
 parser.add_argument('-w', '--wait', action="store_true",
                     help='Disables the need for your device to be connected initially')
 parser.add_argument('-o', '--once', action="store_true",
                     help='Only fires the command once')
 parser.add_argument('-d', '--distance', type=int,
-                    help='Querry the distance. Devices needs to be connected')
+                    help='Query the distance. Devices needs to be connected')
 parser.add_argument('ADDR', help='Identifier needed')
 args = parser.parse_args()
 
